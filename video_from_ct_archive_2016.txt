@@ -1,0 +1,7 @@
+cat  1504.k.m3u8 | grep -v EX > pl_all.txt
+
+id=0; for url in `cat pl_all.txt`; do name=`printf "movie_%04d.ts" $id`; wget  "$url" -O $name ;((id=id+1)) ; done;
+
+for file in *.ts; do echo file \'$file\' >> mylist.txt; done;
+
+ffmpeg -f concat -i mylist.txt -copyinkf -c:v copy -copyts  -c:a libmp3lame -q:a 1  -avoid_negative_ts 1 -movflags faststart "movie.mp4"
