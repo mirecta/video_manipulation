@@ -77,7 +77,7 @@ echo "done"
 
 echo "Start burn subtitles to movie:"
 
-ffmpeg  -stats   -i "$MOVIE"   -c:a libmp3lame -b:v 900k -q:a 1 -c:v h264_nvenc -preset slow -tune film -profile:v main -level 4.0    -vf "ass='${MOVIE_FILENAME}.ass'"  "$TARGET_MOVIE" 
+ffmpeg  -stats   -i "$MOVIE"   -c:a libmp3lame -b:v 1900k -q:a 1 -c:v h264_nvenc -preset slow -tune film -profile:v main -level 4.0    -vf "ass='${MOVIE_FILENAME}.ass'"  "$TARGET_MOVIE" 
 
 echo "done"
 
