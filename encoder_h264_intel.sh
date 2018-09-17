@@ -1,4 +1,5 @@
 #!/bin/bash
+#sudo apt install vainfo 
 #sudo apt install i965-va-driver-shaders/testing
 
 
