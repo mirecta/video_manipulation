@@ -5,7 +5,7 @@
 #youtube-dl -c -x --yes-playlist --audio-format mp3 --quiet --no-warnings
 
 mkdir -p $2
-youtube-dl   --quiet --no-warnings --yes-playlist --continue --extract-audio --audio-format mp3  $1
+youtube-dl   -i --no-warnings --yes-playlist --continue --extract-audio --audio-format mp3  $1
 
 
 for file in *.mp3
