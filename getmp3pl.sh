@@ -4,13 +4,8 @@
 #
 #youtube-dl -c -x --yes-playlist --audio-format mp3 --quiet --no-warnings
 
-mkdir -p $2
 yt-dlp   -i --no-warnings --yes-playlist --continue --extract-audio --audio-format mp3  $1
 
+mp3gain -c -r *.mp3
 
-for file in *.mp3
-do
-	echo -n "Normalize $file ..."
-	sox --norm "$file" "$2/$file"
-	echo "done"
-done
+
